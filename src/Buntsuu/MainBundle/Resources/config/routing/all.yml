@@ -1,0 +1,11 @@
+all_index:
+    pattern:   /
+    defaults:  { _controller: BuntsuuMainBundle:All:index }
+    
+all_search:
+    pattern:   /search
+    defaults:  { _controller: BuntsuuMainBundle:All:search }
+    
+all_registration:
+    pattern:   /registration
+    defaults:  { _controller: BuntsuuMainBundle:All:registration }

@@ -1,0 +1,22 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+
+<div id="menu">
+	<ul>
+	<li><a href="{{ path("member_index") }}"><img src="{{ asset("bundles/buntsuumain/images/home.png") }}"  /><br/> Home </a></li>
+	<li><a href="{{ path("member_search") }}"><img src="{{ asset("bundles/buntsuumain/images/search.png") }}"  /><br/>Search</a></li>
+	<li><a href="{{ path("member_profile") }}"><img src="{{ asset("bundles/buntsuumain/images/profil.png") }}" /><br/> Profile </a></li>
+	<li><a href="{{ path("member_stamp") }}"><img src="{{ asset("bundles/buntsuumain/images/stamp.png") }}"  /><br/> Stamp </a></li>
+	<li><a href="{{ path("member_chat") }}"> <img src="{{ asset("bundles/buntsuumain/images/chat.png") }}"  /><br/> Chats </a></li>
+	</ul>
+</div>
+
+<div class="clear"></div>
+
+        <div>
+            {% block principal_content %}
+            
+            {% endblock principal_content %}
+     	</div>
+{% endblock %}

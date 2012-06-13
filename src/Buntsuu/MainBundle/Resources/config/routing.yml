@@ -1,0 +1,11 @@
+all:
+    resource: "@BuntsuuMainBundle/Resources/config/routing/all.yml"
+    prefix:   /
+
+member:
+    resource: "@BuntsuuMainBundle/Resources/config/routing/member.yml"
+    prefix:   /member
+
+admin:
+    resource: "@BuntsuuMainBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin

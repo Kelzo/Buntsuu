@@ -1,0 +1,19 @@
+member_index:
+    pattern:   /
+    defaults:  { _controller: BuntsuuMainBundle:Member:index }
+    
+member_search:
+    pattern:   /search
+    defaults:  { _controller: BuntsuuMainBundle:Member:search }
+
+member_profile:
+    pattern:   /profile
+    defaults:  { _controller: BuntsuuMainBundle:Member:profile }
+
+member_stamp:
+    pattern:   /stamp
+    defaults:  { _controller: BuntsuuMainBundle:Member:stamp }
+
+member_chat:
+    pattern:   /chat
+    defaults:  { _controller: BuntsuuMainBundle:Member:chat }

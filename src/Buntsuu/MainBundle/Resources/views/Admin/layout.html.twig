@@ -1,0 +1,11 @@
+{% extends "::layout.html.twig" %}
+
+{% block body %}
+<a href="{{ path("all_index") }}"> Home </a>
+<a href="{{ path("all_search") }}"> Search </a>
+        <div>
+            {% block principal_content %}
+            
+            {% endblock principal_content %}
+     	</div>
+{% endblock %}
