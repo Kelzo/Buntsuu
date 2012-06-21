@@ -1,0 +1,80 @@
+{% extends "BuntsuuMainBundle:Member:layout.html.twig" %}
+{% block principal_content %}
+
+	<form action="" class="side-by-side clearfix" method="post" {{ form_enctype(form) }}>
+		{{ form_errors(form) }}
+		{{ form_widget(form._token) }}
+		<div id="content_second">
+		<h2>Your languages preferences</h2>
+			<div id="language_spoken">
+				<label for="buntsuu_mainbundle_preferencetype_firstLanguageSpokenOne">Language Spoken n°1 (priority)</label>
+		         {{ form_widget(form.firstLanguageSpoken, { 'attr': {'class': 'chzn-select'} }) }}
+		         <label for="buntsuu_mainbundle_preferencetype_secondLanguageSpoken">Language Spoken n°2</label>
+		    	 {{ form_widget(form.secondLanguageSpoken, { 'attr': {'class': 'chzn-select'} }) }}
+		    	 <label for="buntsuu_mainbundle_preferencetype_thirdLanguageSpoken">Language Spoken n°3</label>
+		    	 {{ form_widget(form.thirdLanguageSpoken, { 'attr': {'class': 'chzn-select'} }) }}
+		    	 
+		    	 <div id="language_searched_button" class="button_green ">(CLICK HERE)</div>
+	    	 </div>
+	    	 <div id="language_searched">
+    	 <label for="buntsuu_mainbundle_preferencetype_firstLanguageSearched">Language Searched n°1 (priority)</label>
+	    	 	 {{ form_widget(form.firstLanguageSearched, { 'attr': {'class': 'chzn-select'} }) }}
+	    	 	 <label for="buntsuu_mainbundle_preferencetype_secondLanguageSearched">Language Searched n°2</label>
+	    	 	 {{ form_widget(form.secondLanguageSearched, { 'attr': {'class': 'chzn-select'} }) }}
+	    	 	 <label for="buntsuu_mainbundle_preferencetype_thirdLanguageSearched">Language Searched n°3</label>
+	    	 	 {{ form_widget(form.thirdLanguageSearched, { 'attr': {'class': 'chzn-select'} }) }}
+	    	 <div id="language_spoken_button" class="button_green">(CLICK HERE)</div>
+    	 	 </div>
+        
+        </div>
+        <div id="content_first" >
+        <h2>Communications medias</h2>
+        <a style="font-size:12px;font-weight:bold; color:#E1C62F"> (Click to activate) </a>
+	        <div id="medias">
+	       		 <label for="buntsuu_mainbundle_preferencetype_skype" class="checkbox_label">Skype</label>
+	    	 	 {{ form_widget(form.skype, { 'attr': {'class': 'checkbox_form'} }) }}
+	    	 	 <label for="buntsuu_mainbundle_preferencetype_facebook" class="checkbox_label">Facebook</label>
+	    	 	 {{ form_widget(form.facebook, { 'attr': {'class': 'checkbox_form'} }) }}
+	    	 	 <label for="buntsuu_mainbundle_preferencetype_email" class="checkbox_label">Email</label>
+	    	 	 {{ form_widget(form.email, { 'attr': {'class': 'checkbox_form'} }) }}
+				 <label for="buntsuu_mainbundle_preferencetype_letter" class="checkbox_label">Letter</label>
+	    	 	 {{ form_widget(form.letter, { 'attr': {'class': 'checkbox_form'} }) }}
+	    	 	 <label for="buntsuu_mainbundle_preferencetype_webcam" class="checkbox_label">Webcam</label>
+	    	 	 {{ form_widget(form.webcam, { 'attr': {'class': 'checkbox_form'} }) }}
+			
+			</div>
+		</div>
+		<input type="submit" value="Validate" style="float:right"/>
+		<div class="clear"></div>
+    </form>
+    
+    <script type="text/javascript">
+    	
+		$("#language_searched").hide();
+		
+		$("#language_searched_button").click(function(){
+			$("#language_spoken").hide();
+			$("#language_searched").show();
+		});
+		
+		$("#language_spoken_button").click(function(){
+			$("#language_searched").hide();
+			$("#language_spoken").show();
+		});
+
+
+		$(".checkbox_label").click(function()
+		{
+			if ($(this).attr('class') == 'checkbox_label_checked')
+			{
+				$(this).attr('class','checkbox_label');
+			}
+			else
+			{
+				$(this).attr('class','checkbox_label_checked');
+			}
+		});
+		
+	
+    </script>
+{% endblock %}

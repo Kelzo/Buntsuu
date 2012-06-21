@@ -3,5 +3,93 @@
 {%block  principal_content %}
 
 <h2> Chats </h2>
+{% if currentTarget is not empty %}
+<div id="target">
+<ul>
+{% for target in targets %}
+			<li {% if  currentTarget == target  %} class="currentTarget"{% endif %}>{{ target |slice(0, 6) }}{% if target|length > 6 %} ...{% endif %}</li>
+			
+			
+{% endfor %}
+</ul>
+</div>
 
+<div id="chat">
+	<div id="text" class="{{ currentTarget }}">
+		{% for message in messages %}
+		<h3>{{ message.author.username}}:</h3> {{ message.message }}<br/><br/>
+		{% endfor %}
+	</div>
+</div>
+<div class="clear"></div>
+<div id="write">
+
+<form name="myform" class="noPadding"  onSubmit="return(false);">
+	<textarea name="limitedtextarea" onKeyDown="limitText(this.form.limitedtextarea,this.form.countdown,80);" 
+onKeyUp="limitText(this.form.limitedtextarea,this.form.countdown,80);" type="text" id="message" style="float:left;height:50px; width:40%;" value="test" /> 
+</textarea>
+	<button id="submit" value="Send" style="float:left; height:56px;">Send</button>
+	<div class="clear"></div>
+	<font size="1">
+You have <input readonly class="noDesign" type="text" name="countdown" size="3" value="80"> characters left. (Maximum characters: 80)</font>
+</div>
+</form>	
+
+
+{% else %}
+	<div id="warning">
+		<h2>Oh..</h2>
+		You don't have an open communication, find a friend with the search before !
+	</div>
+{% endif %}
+<div class="clear"></div>
+<script type="text/javascript">
+	$("#submit").click(function(){
+		 var username = $("#text").attr('class');
+		 var message = $("#message").val();
+		 if(message !=""){
+			 $("#message").val('');
+			 var DATA ='username='+username+'&message='+message;
+			 $.ajax({
+			        type: "POST",
+			        url:"{{ path('member_chat_message')}}",
+			        data: DATA,
+			        cache: false,
+			        success: function(data)
+			        {
+						$("#chat").html(data);
+			        }
+			  });
+			 }
+	});
+
+	$("#target li").click(function(){
+		$(".currentTarget").attr('class','');
+		$(this).attr('class','currentTarget');
+		 var username = $(this).html();
+		 var DATA ='username='+username;
+		 $.ajax({
+		        type: "POST",
+		        url:"{{ path('member_chat_target')}}",
+		        data: DATA,
+		        cache: false,
+		        success: function(data)
+		        {
+					$("#chat").html(data);
+		        }
+		  });
+	});
+
+
+</script>
+
+<script language="javascript" type="text/javascript">
+function limitText(limitField, limitCount, limitNum) {
+	if (limitField.value.length > limitNum) {
+		limitField.value = limitField.value.substring(0, limitNum);
+	} else {
+		limitCount.value = limitNum - limitField.value.length;
+	}
+}
+</script>
 {% endblock %}

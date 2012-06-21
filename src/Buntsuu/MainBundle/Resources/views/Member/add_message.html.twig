@@ -1,0 +1,5 @@
+	<div id="text" class="{{ currentTarget }}">
+		{% for message in messages %}
+		<h3>{{ message.author.username}}:</h3> {{ message.message }}<br/><br/>
+		{% endfor %}
+	</div>

@@ -1156,7 +1156,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4fd6f78483e8d</argument>
+            <argument>4fe1d1b115c02</argument>
           </service>
         </argument>
       </argument>
@@ -1288,6 +1288,24 @@
           </service>
         </argument>
         <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
+                <argument type="service" id="router"/>
+              </service>
+            </argument>
+            <argument>/logout</argument>
+            <argument>/</argument>
+            <argument>null</argument>
+            <call method="addHandler">
+              <argument type="service">
+                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+              </argument>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
             <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.main"/>
             <argument type="service" id="security.context"/>
@@ -1348,7 +1366,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4fd6f78483e8d</argument>
+            <argument>4fe1d1b115c02</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>

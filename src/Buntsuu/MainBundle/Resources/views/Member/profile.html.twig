@@ -5,5 +5,20 @@
 <h2> Profile </h2>
 
 {{ user.username }}
+{{ user.gender }}
+{{ user.skype }}
+{{ user.facebook }}
+{{ user.birthdate | date('Y-m-d') }}
 
+{% if preference is not empty %}
+<h3>My preferences :</h3>
+	{{ preference.skype }}
+	{{ preference.facebook }}
+	{{ preference.letter }}
+	{{ preference.email }}
+{% else %}
+	Your preference aren't selected, please do it !
+	<br/>
+	<a href="{{ path('member_preference')  }}"> Preferences </a>
+{% endif %}
 {% endblock %}

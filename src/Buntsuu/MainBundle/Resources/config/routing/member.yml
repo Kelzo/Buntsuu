@@ -10,6 +10,10 @@ member_profile:
     pattern:   /profile
     defaults:  { _controller: BuntsuuMainBundle:Member:profile }
 
+member_preference:
+    pattern:  /preference
+    defaults: { _controller : BuntsuuMainBundle:Member:preference }
+
 member_stamp:
     pattern:   /stamp
     defaults:  { _controller: BuntsuuMainBundle:Member:stamp }
@@ -17,3 +21,11 @@ member_stamp:
 member_chat:
     pattern:   /chat
     defaults:  { _controller: BuntsuuMainBundle:Member:chat }
+    
+member_chat_message:
+    pattern:   /chat/add
+    defaults:  { _controller: BuntsuuMainBundle:Member:addMessage }
+
+member_chat_target:
+    pattern:   /chat/target
+    defaults:  { _controller: BuntsuuMainBundle:Member:selectTarget }

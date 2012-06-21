@@ -3,5 +3,32 @@
 {%block  principal_content %}
 
 <h2> Search </h2>
+<h3>Primary</h3>
+{%  for user in pUsers %}
+<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+	{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}
+</div>
+<div class="clear"></div>
+{% endfor %}
+<h3>Secondary</h3>
+{%  for user in sUsers %}
+<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+	{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}
+</div>
+<div class="clear"></div>
+{% endfor %}
+
+<h3>3</h3>
+{%  for user in tUsers %}
+<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+	{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}
+</div>
+<div class="clear"></div>
+{% endfor %}
+<h3>4</h3>
+
+
+
+
 
 {% endblock %}

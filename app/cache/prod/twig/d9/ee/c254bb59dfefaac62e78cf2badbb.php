@@ -35,8 +35,8 @@ class __TwigTemplate_d9eec254bb59dfefaac62e78cf2badbb extends Twig_Template
         echo "\"  /> Search </h2>
 \t<form action=\"\" class=\"side-by-side clearfix\" method=\"post\">
        
-       <label>Language Spoken</label>
-       <select>
+       <label>Spoken</label>
+       <select  class=\"chzn-select\">
        \t";
         // line 10
         $context['_parent'] = (array) $context;
@@ -53,9 +53,9 @@ class __TwigTemplate_d9eec254bb59dfefaac62e78cf2badbb extends Twig_Template
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
         // line 13
         echo "       \t</select>
-       \t
-       \t<label>Langague Searched</label>
-       \t<select>
+
+       \t<label>Searched</label>
+       \t<select  class=\"chzn-select\">
        \t";
         // line 17
         $context['_parent'] = (array) $context;
@@ -72,7 +72,7 @@ class __TwigTemplate_d9eec254bb59dfefaac62e78cf2badbb extends Twig_Template
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
         // line 20
         echo "       </select>
-       
+
        
         <input type=\"submit\" />
     </form>

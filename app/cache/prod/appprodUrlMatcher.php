@@ -30,6 +30,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array('_route' => 'login_check');
         }
 
+        // logout
+        if ($pathinfo === '/logout') {
+            return array('_route' => 'logout');
+        }
+
         // all_index
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
@@ -67,6 +72,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::profileAction',  '_route' => 'member_profile',);
             }
 
+            // member_preference
+            if ($pathinfo === '/member/preference') {
+                return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::preferenceAction',  '_route' => 'member_preference',);
+            }
+
             // member_stamp
             if ($pathinfo === '/member/stamp') {
                 return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::stampAction',  '_route' => 'member_stamp',);
@@ -75,6 +85,16 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             // member_chat
             if ($pathinfo === '/member/chat') {
                 return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::chatAction',  '_route' => 'member_chat',);
+            }
+
+            // member_chat_message
+            if ($pathinfo === '/member/chat/add') {
+                return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::addMessageAction',  '_route' => 'member_chat_message',);
+            }
+
+            // member_chat_target
+            if ($pathinfo === '/member/chat/target') {
+                return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::selectTargetAction',  '_route' => 'member_chat_target',);
             }
 
         }

@@ -24,7 +24,7 @@ class User implements UserInterface {
 	/**
 	 * @var string $username
 	 *
-	 * @ORM\Column(name="username", type="string", length=20)
+	 * @ORM\Column(name="username", type="string", length=20, unique=true)
 	 */
 	private $username;
 	
@@ -53,6 +53,34 @@ class User implements UserInterface {
      */
     private $roles;
     
+    /**
+     * @var boolean $gender
+     *
+     * @ORM\Column(name="gender", type="boolean", nullable="true")
+     */
+    private $gender;
+    
+    /**
+     * @var string $skype
+     *
+     * @ORM\Column(name="skype", type="string", length=60,nullable="true")
+     */
+    private $skype;
+    
+    /**
+     * @var string $facebook
+     *
+     * @ORM\Column(name="facebook", type="string", length=60,nullable="true")
+     */
+    private $facebook;
+
+    
+    /**
+     * @var string $birthdate
+     *
+     * @ORM\Column(name="birthdate", type="date",nullable="true")
+     */
+    private $birthdate;
     
     
 
@@ -158,5 +186,101 @@ class User implements UserInterface {
 		
 		return false;
 	}
+	
+	/**
+	* Set gender
+	*
+	* @param  boolean gender
+	*/
+	public function setGender($gender)
+	{
+	    $this->gender = $gender;
+	    return $this;
+	}
+	 
+	/**
+	*Get gender 
+	*
+	* @return boolean
+	*/
+	public function getGender()
+	{
+	    return $this->gender;
+	}
+	
+	/**
+	* Set birthdate
+	*
+	* @param  date birthdate
+	*/
+	public function setBirthDate($birthdate)
+	{
+	    $this->birthdate = $birthdate;
+	    return $this;
+	}
+	 
+	/**
+	*Get birthdate 
+	*
+	* @return date
+	*/
+	public function getBirthDate()
+	{
+	    return $this->birthdate;
+	}
+	
+	/**
+	* Set skype
+	*
+	* @param  string skype
+	*/
+	public function setSkype($skype)
+	{
+	    $this->skype = $skype;
+	    return $this;
+	}
+	 
+	/**
+	*Get skype 
+	*
+	* @return string
+	*/
+	public function getSkype()
+	{
+	    return $this->skype;
+	}
+	
+	/**
+	* Set facebook
+	*
+	* @param  string facebook
+	*/
+	public function setFacebook($facebook)
+	{
+	    $this->facebook = $facebook;
+	    return $this;
+	}
+	 
+	/**
+	*Get facebook 
+	*
+	* @return string
+	*/
+	public function getFacebook()
+	{
+	    return $this->facebook;
+	}
+	
 
+	
+	public function serialize()
+	{
+		return serialize($this->username);
+	}
+	
+	public function unserialize($data)
+	{
+		$this->username = unserialize($data);
+	}
+	
 }

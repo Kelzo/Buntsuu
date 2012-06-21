@@ -114,10 +114,70 @@ class BuntsuuMainBundleEntityUserProxy extends \Buntsuu\MainBundle\Entity\User i
         return parent::isSuperAdmin();
     }
 
+    public function setGender($gender)
+    {
+        $this->__load();
+        return parent::setGender($gender);
+    }
+
+    public function getGender()
+    {
+        $this->__load();
+        return parent::getGender();
+    }
+
+    public function setBirthDate($birthdate)
+    {
+        $this->__load();
+        return parent::setBirthDate($birthdate);
+    }
+
+    public function getBirthDate()
+    {
+        $this->__load();
+        return parent::getBirthDate();
+    }
+
+    public function setSkype($skype)
+    {
+        $this->__load();
+        return parent::setSkype($skype);
+    }
+
+    public function getSkype()
+    {
+        $this->__load();
+        return parent::getSkype();
+    }
+
+    public function setFacebook($facebook)
+    {
+        $this->__load();
+        return parent::setFacebook($facebook);
+    }
+
+    public function getFacebook()
+    {
+        $this->__load();
+        return parent::getFacebook();
+    }
+
+    public function serialize()
+    {
+        $this->__load();
+        return parent::serialize();
+    }
+
+    public function unserialize($data)
+    {
+        $this->__load();
+        return parent::unserialize($data);
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'username', 'salt', 'password', 'email', 'isActive', 'roles');
+        return array('__isInitialized__', 'id', 'username', 'salt', 'password', 'email', 'isActive', 'roles', 'gender', 'skype', 'facebook', 'birthdate');
     }
 
     public function __clone()
