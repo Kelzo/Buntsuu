@@ -1,7 +1,7 @@
 <?php
 
-/* BuntsuuMainBundle:Member:profile.html.twig */
-class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
+/* BuntsuuMainBundle:Member:profile_target.html.twig */
+class __TwigTemplate_07678da57c61a9e5693fe8105b83f979 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -39,13 +39,13 @@ class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
         // line 8
         if (($this->getAttribute($this->getContext($context, "user"), "gender") == 0)) {
             // line 9
-            echo "<img img class=\"mini\" src=\"";
+            echo "<img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/0.png"), "html", null, true);
             echo "\" alt=\"skype\"/>
 ";
         } else {
             // line 11
-            echo "<img img class=\"mini\" src=\"";
+            echo "<img src=\"";
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/1.png"), "html", null, true);
             echo "\" alt=\"skype\"/>
 ";
@@ -54,27 +54,27 @@ class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
         echo " ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "user"), "username"), "html", null, true);
         echo "</div>
-<div class=\"email\"><img class=\"mini\" src=\"";
+<div class=\"email\"><img src=\"";
         // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/email.png"), "html", null, true);
         echo "\" alt=\"email\"/>  Email </div>
-<div class=\"letter\"><img class=\"mini\"src=\"";
+<div class=\"letter\"><img src=\"";
         // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/letter.png"), "html", null, true);
         echo "\" alt=\"letter\"/>  Adress </div>
-<div class=\"classic_bottom\"><img class=\"mini\" src=\"";
+<div class=\"classic_bottom\"><img src=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/birthday.png"), "html", null, true);
         echo "\" alt=\"skype\"/> Birthday ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "user"), "birthdate"), "html", null, true);
         echo "</div>
-<div class=\"skype\" ><img class=\"mini\" src=\"";
+<div class=\"skype\" ><img src=\"";
         // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/skype.png"), "html", null, true);
         echo "\" alt=\"skype\"/>  ";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "user"), "skype"), "html", null, true);
         echo "</div>
-<div class=\"facebook\"><img class=\"mini\" src=\"";
+<div class=\"facebook\"><img src=\"";
         // line 17
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/facebook.png"), "html", null, true);
         echo "\" alt=\"facebook\"/>  ";
@@ -104,17 +104,8 @@ class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "preference"), "email"), "html", null, true);
             echo "
 ";
-        } else {
-            // line 27
-            echo "\tYour preference aren't selected, please do it !
-\t<br/>
-\t<a href=\"";
-            // line 29
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("member_preference"), "html", null, true);
-            echo "\"> Preferences </a>
-";
         }
-        // line 31
+        // line 27
         echo "</div>
 <div class=\"clear\"></div>
 ";
@@ -122,7 +113,7 @@ class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
 
     public function getTemplateName()
     {
-        return "BuntsuuMainBundle:Member:profile.html.twig";
+        return "BuntsuuMainBundle:Member:profile_target.html.twig";
     }
 
     public function isTraitable()
@@ -132,6 +123,6 @@ class __TwigTemplate_ec1a1db2a02f5626663e83849ff8a717 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  116 => 31,  111 => 29,  107 => 27,  102 => 25,  98 => 24,  94 => 23,  90 => 22,  87 => 21,  85 => 20,  77 => 17,  71 => 16,  65 => 15,  61 => 14,  57 => 13,  52 => 12,  46 => 11,  40 => 9,  38 => 8,  32 => 5,  29 => 4,  26 => 3,);
+        return array (  107 => 27,  102 => 25,  98 => 24,  94 => 23,  90 => 22,  87 => 21,  85 => 20,  77 => 17,  71 => 16,  65 => 15,  61 => 14,  57 => 13,  52 => 12,  46 => 11,  40 => 9,  38 => 8,  32 => 5,  29 => 4,  26 => 3,);
     }
 }

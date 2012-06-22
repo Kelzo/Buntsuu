@@ -28,93 +28,113 @@ class __TwigTemplate_d9eec254bb59dfefaac62e78cf2badbb extends Twig_Template
     public function block_principal_content($context, array $blocks = array())
     {
         // line 4
-        echo "<div id=\"first\">
-\t<h2> <img src=\"";
-        // line 5
+        echo "<div id=\"first\" class=\"content_design\">
+\t<div class=\"general_content\">
+\t\t<h2 id=\"title_page\"> Search </h2><img id=\"mini\" src=\"";
+        // line 6
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/search.png"), "html", null, true);
-        echo "\"  /> Search </h2>
-\t<form action=\"\" class=\"side-by-side clearfix\" method=\"post\">
-       
-       <label>Spoken</label>
-       <select  class=\"chzn-select\">
-       \t";
-        // line 10
+        echo "\" alt=\"search\"/>
+\t\t<div class=\"clear\"></div>
+\t\t<form action=\"\" class=\"side-by-side clearfix\" method=\"post\">
+\t       
+\t       <label>Spoken</label>
+\t       <select  class=\"chzn-select\">
+\t       \t";
+        // line 12
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "languages"));
         foreach ($context['_seq'] as $context["_key"] => $context["language"]) {
-            // line 11
-            echo "       \t\t<option>";
+            // line 13
+            echo "\t       \t\t<option>";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "language"), "name"), "html", null, true);
             echo "</option>
-       \t";
+\t       \t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['language'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 13
-        echo "       \t</select>
-
-       \t<label>Searched</label>
-       \t<select  class=\"chzn-select\">
-       \t";
-        // line 17
+        // line 15
+        echo "\t       \t</select>
+\t
+\t       \t<label>Searched</label>
+\t       \t<select  class=\"chzn-select\">
+\t       \t";
+        // line 19
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "languages"));
         foreach ($context['_seq'] as $context["_key"] => $context["language"]) {
-            // line 18
-            echo "       \t\t<option>";
+            // line 20
+            echo "\t       \t\t<option>";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "language"), "name"), "html", null, true);
             echo "</option>
-       \t";
+\t       \t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['language'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 20
-        echo "       </select>
-
-       
-        <input type=\"submit\" />
-    </form>
+        // line 22
+        echo "\t       </select>
+\t
+\t       <div  class=\"clear\"></div>
+\t        <button class=\"submit submit_purple\" type=\"submit\" >  Search !</button>
+\t    </form>
+    </div>
 </div>
-<div id=\"second\">
-\t<h2> <img src=\"";
-        // line 27
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/subscribe.png"), "html", null, true);
-        echo "\"  /> Sign Up </h2>
-\t<p></p>
-\t<!--  FORMULAIRE DE LOGIN -->
-\t<div class=\"clear\"></div>
-\t<div>
-\t";
-        // line 32
+<div id=\"second\" class=\"content_design\">
+\t<div class=\"general_content\">
+\t\t<h2 id=\"title_page\"> Login </h2><img id=\"mini\" src=\"";
+        // line 31
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/profil.png"), "html", null, true);
+        echo "\" alt=\"search\"/>
+\t\t<div class=\"clear\"></div>
+\t\t<p></p>
+\t\t<!--  FORMULAIRE DE LOGIN -->
+\t\t<div class=\"clear\"></div>
+\t\t<div>
+\t\t";
+        // line 37
         if ($this->getContext($context, "error")) {
-            // line 33
-            echo "    \t<div>";
+            // line 38
+            echo "\t    \t<div>";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "error"), "message"), "html", null, true);
             echo "</div>
-\t";
+\t\t";
         }
-        // line 35
-        echo "\t\t<form action=\"";
+        // line 40
+        echo "\t\t\t<form action=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("login_check"), "html", null, true);
         echo "\" method=\"post\">
-\t\t    <label for=\"username\">Username:</label>
-\t\t    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 37
+\t\t\t    <label for=\"username\">Username:</label>
+\t\t\t    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
+        // line 42
         echo twig_escape_filter($this->env, $this->getContext($context, "last_username"), "html", null, true);
         echo "\" />
-\t\t
-\t\t    <label for=\"password\">Password:</label>
-\t\t    <input type=\"password\" id=\"password\" name=\"_password\" />
-\t\t
-\t\t    ";
-        // line 46
-        echo "\t\t
-\t\t    <button type=\"submit\">login</button>
-\t\t</form>
+\t\t\t
+\t\t\t    <label for=\"password\">Password:</label>
+\t\t\t    <input type=\"password\" id=\"password\" name=\"_password\" />
+\t\t\t
+\t\t\t    ";
+        // line 51
+        echo "\t\t\t
+\t\t\t    <button class=\"submit  submit_green\" type=\"submit\"> Go ! </button>
+\t\t\t</form>
+\t\t</div>
 \t</div>
-\t
+</div>
+<div id=\"third\" class=\"content_design\">
+\t<div class=\"general_content\">
+\t\t<h2 id=\"title_page\"> Subscribe </h2><img id=\"mini\" src=\"";
+        // line 59
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/subscribe.png"), "html", null, true);
+        echo "\" alt=\"search\"/>
+\t\t<div class=\"clear\"></div>
+\t\t<div style=\"width:95%;margin:0 auto;padding-bottom:20px;\">
+\t\t\t<a href=\"";
+        // line 62
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("all_registration"), "html", null, true);
+        echo "\"><button class=\"submit submit_blue\" type=\"submit\" >  Go ! </button></a> 
+\t\t</div>
+\t</div>
 </div>
 <div class=\"clear\"></div>
 ";
@@ -132,6 +152,6 @@ class __TwigTemplate_d9eec254bb59dfefaac62e78cf2badbb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  111 => 46,  103 => 37,  97 => 35,  91 => 33,  89 => 32,  81 => 27,  72 => 20,  63 => 18,  59 => 17,  53 => 13,  44 => 11,  40 => 10,  32 => 5,  29 => 4,  26 => 3,);
+        return array (  132 => 62,  126 => 59,  116 => 51,  108 => 42,  102 => 40,  96 => 38,  94 => 37,  85 => 31,  74 => 22,  65 => 20,  61 => 19,  55 => 15,  46 => 13,  42 => 12,  33 => 6,  29 => 4,  26 => 3,);
     }
 }

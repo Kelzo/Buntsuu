@@ -59,9 +59,7 @@ class MemberController extends Controller
 			}
 	    	
 	    	$pUsers = $em->getRepository('BuntsuuMainBundle:Preference')->principalPreference($preferences);
-	    	var_dump($pUsers);
 	    	$sUsers = $em->getRepository('BuntsuuMainBundle:Preference')->secondaryPreference($preferences);
-	    	var_dump($sUsers);
 	    	$tUsers  = $em->getRepository('BuntsuuMainBundle:Preference')->tertiaryPreference($preferences);
     	}
 		
@@ -77,6 +75,16 @@ class MemberController extends Controller
     	$preference = $em->getRepository('BuntsuuMainBundle:Preference')->findOneByUser($user->getId());
     	return $this->render('BuntsuuMainBundle:Member:profile.html.twig',array("user"=>$user,"preference"=>$preference));
     }
+    
+    public function profileTargetAction($target)
+    
+    {
+    	$em = $this->getDoctrine()->getEntityManager();
+    	$user =  $em->getRepository('BuntsuuMainBundle:User')->findOneByUsername($target);
+    	$preference = $em->getRepository('BuntsuuMainBundle:Preference')->findOneByUser($user->getId());
+    	return $this->render('BuntsuuMainBundle:Member:profile_target.html.twig',array("user"=>$user,"preference"=>$preference));
+    }
+    
     
     /* Show the User's STAMPS */
     public function stampAction()

@@ -64,8 +64,8 @@ class PreferenceRepository extends EntityRepository
 		->select('u.username as username, u.gender as gender')
 		->where('
 				(flp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) OR
-				slp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched)) OR
-				tlp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) AND (
+				slp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) OR
+				tlp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched)) AND (
 				fls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken) OR
 				sls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken)) OR 
 				tls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken) AND (
@@ -105,17 +105,12 @@ class PreferenceRepository extends EntityRepository
 		->where('
 				flp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) OR
 				slp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) OR
-				tlp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) AND (
-				fls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken) OR
-				sls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken) OR
-				tls.name IN (:FirstLanguageSpoken,:SecondLanguageSpoken,:ThirdLanguageSpoken))
+				tlp.name IN (:FirstLanguageSearched,:SecondLanguageSearched,:ThirdLanguageSearched) 
 				')
 				->setParameter('FirstLanguageSearched', $preferences->getFirstLanguageSearched()->getName())
 				->setParameter('SecondLanguageSearched', $preferences->getSecondLanguageSearched()->getName())
-				->setParameter('ThirdLanguageSearched', $preferences->getThirdLanguageSearched()->getName())
-				->setParameter('FirstLanguageSpoken', $preferences->getFirstLanguageSpoken()->getName())
-				->setParameter('SecondLanguageSpoken', $preferences->getSecondLanguageSpoken()->getName())
-				->setParameter('ThirdLanguageSpoken', $preferences->getThirdLanguageSpoken()->getName());
+				->setParameter('ThirdLanguageSearched', $preferences->getThirdLanguageSearched()->getName());
+
 
 	
 	

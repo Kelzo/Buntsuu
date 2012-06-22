@@ -29,19 +29,23 @@ class __TwigTemplate_dca49409a2dbea59811ea1c3af3bcf1a extends Twig_Template
     {
         // line 4
         echo "
-<h2> Chats </h2>
+<h2 id=\"title_page\"> Chats </h2><img id=\"mini\" src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/chat.png"), "html", null, true);
+        echo "\" alt=\"chat\"/>
+<div class=\"clear\"></div>
 ";
-        // line 6
+        // line 7
         if ((!twig_test_empty($this->getContext($context, "currentTarget")))) {
-            // line 7
+            // line 8
             echo "<div id=\"target\">
 <ul>
 ";
-            // line 9
+            // line 10
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, "targets"));
             foreach ($context['_seq'] as $context["_key"] => $context["target"]) {
-                // line 10
+                // line 11
                 echo "\t\t\t<li ";
                 if (($this->getContext($context, "currentTarget") == $this->getContext($context, "target"))) {
                     echo " class=\"currentTarget\"";
@@ -59,21 +63,21 @@ class __TwigTemplate_dca49409a2dbea59811ea1c3af3bcf1a extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['target'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 14
+            // line 15
             echo "</ul>
 </div>
 
 <div id=\"chat\">
 \t<div id=\"text\" class=\"";
-            // line 18
+            // line 19
             echo twig_escape_filter($this->env, $this->getContext($context, "currentTarget"), "html", null, true);
             echo "\">
 \t\t";
-            // line 19
+            // line 20
             $context['_parent'] = (array) $context;
             $context['_seq'] = twig_ensure_traversable($this->getContext($context, "messages"));
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 20
+                // line 21
                 echo "\t\t<h3>";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "message"), "author"), "username"), "html", null, true);
                 echo ":</h3> ";
@@ -84,7 +88,7 @@ class __TwigTemplate_dca49409a2dbea59811ea1c3af3bcf1a extends Twig_Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_merge($_parent, array_intersect_key($context, $_parent));
-            // line 22
+            // line 23
             echo "\t</div>
 </div>
 <div class=\"clear\"></div>
@@ -104,14 +108,14 @@ You have <input readonly class=\"noDesign\" type=\"text\" name=\"countdown\" siz
 
 ";
         } else {
-            // line 40
+            // line 41
             echo "\t<div id=\"warning\">
 \t\t<h2>Oh..</h2>
 \t\tYou don't have an open communication, find a friend with the search before !
 \t</div>
 ";
         }
-        // line 45
+        // line 46
         echo "<div class=\"clear\"></div>
 <script type=\"text/javascript\">
 \t\$(\"#submit\").click(function(){
@@ -123,7 +127,7 @@ You have <input readonly class=\"noDesign\" type=\"text\" name=\"countdown\" siz
 \t\t\t \$.ajax({
 \t\t\t        type: \"POST\",
 \t\t\t        url:\"";
-        // line 55
+        // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("member_chat_message"), "html", null, true);
         echo "\",
 \t\t\t        data: DATA,
@@ -144,7 +148,7 @@ You have <input readonly class=\"noDesign\" type=\"text\" name=\"countdown\" siz
 \t\t \$.ajax({
 \t\t        type: \"POST\",
 \t\t        url:\"";
-        // line 73
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("member_chat_target"), "html", null, true);
         echo "\",
 \t\t        data: DATA,
@@ -183,6 +187,6 @@ function limitText(limitField, limitCount, limitNum) {
 
     public function getDebugInfo()
     {
-        return array (  146 => 73,  125 => 55,  113 => 45,  106 => 40,  86 => 22,  75 => 20,  71 => 19,  67 => 18,  61 => 14,  43 => 10,  39 => 9,  35 => 7,  33 => 6,  29 => 4,  26 => 3,);
+        return array (  150 => 74,  129 => 56,  117 => 46,  110 => 41,  90 => 23,  79 => 21,  75 => 20,  71 => 19,  65 => 15,  47 => 11,  43 => 10,  39 => 8,  37 => 7,  32 => 5,  29 => 4,  26 => 3,);
     }
 }

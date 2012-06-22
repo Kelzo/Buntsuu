@@ -1,53 +1,67 @@
 {% extends "BuntsuuMainBundle:All:layout.html.twig" %}
 
 {%block  principal_content %}
-<div id="first">
-	<h2> <img src="{{ asset("bundles/buntsuumain/images/search.png") }}"  /> Search </h2>
-	<form action="" class="side-by-side clearfix" method="post">
-       
-       <label>Spoken</label>
-       <select  class="chzn-select">
-       	{% for language in languages %}
-       		<option>{{ language.name }}</option>
-       	{% endfor %}
-       	</select>
-
-       	<label>Searched</label>
-       	<select  class="chzn-select">
-       	{% for language in languages %}
-       		<option>{{ language.name }}</option>
-       	{% endfor %}
-       </select>
-
-       
-        <input type="submit" />
-    </form>
-</div>
-<div id="second">
-	<h2> <img src="{{ asset("bundles/buntsuumain/images/subscribe.png") }}"  /> Sign Up </h2>
-	<p></p>
-	<!--  FORMULAIRE DE LOGIN -->
-	<div class="clear"></div>
-	<div>
-	{% if error %}
-    	<div>{{ error.message }}</div>
-	{% endif %}
-		<form action="{{ path('login_check') }}" method="post">
-		    <label for="username">Username:</label>
-		    <input type="text" id="username" name="_username" value="{{ last_username }}" />
-		
-		    <label for="password">Password:</label>
-		    <input type="password" id="password" name="_password" />
-		
-		    {#
-		        If you want to control the URL the user is redirected to on success (more details below)
-		        <input type="hidden" name="_target_path" value="/account" />
-		    #}
-		
-		    <button type="submit">login</button>
-		</form>
-	</div>
+<div id="first" class="content_design">
+	<div class="general_content">
+		<h2 id="title_page"> Search </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/search.png') }}" alt="search"/>
+		<div class="clear"></div>
+		<form action="" class="side-by-side clearfix" method="post">
+	       
+	       <label>Spoken</label>
+	       <select  class="chzn-select">
+	       	{% for language in languages %}
+	       		<option>{{ language.name }}</option>
+	       	{% endfor %}
+	       	</select>
 	
+	       	<label>Searched</label>
+	       	<select  class="chzn-select">
+	       	{% for language in languages %}
+	       		<option>{{ language.name }}</option>
+	       	{% endfor %}
+	       </select>
+	
+	       <div  class="clear"></div>
+	        <button class="submit submit_purple" type="submit" >  Search !</button>
+	    </form>
+    </div>
+</div>
+<div id="second" class="content_design">
+	<div class="general_content">
+		<h2 id="title_page"> Login </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/profil.png') }}" alt="search"/>
+		<div class="clear"></div>
+		<p></p>
+		<!--  FORMULAIRE DE LOGIN -->
+		<div class="clear"></div>
+		<div>
+		{% if error %}
+	    	<div>{{ error.message }}</div>
+		{% endif %}
+			<form action="{{ path('login_check') }}" method="post">
+			    <label for="username">Username:</label>
+			    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+			
+			    <label for="password">Password:</label>
+			    <input type="password" id="password" name="_password" />
+			
+			    {#
+			        If you want to control the URL the user is redirected to on success (more details below)
+			        <input type="hidden" name="_target_path" value="/account" />
+			    #}
+			
+			    <button class="submit  submit_green" type="submit"> Go ! </button>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="third" class="content_design">
+	<div class="general_content">
+		<h2 id="title_page"> Subscribe </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/subscribe.png') }}" alt="search"/>
+		<div class="clear"></div>
+		<div style="width:95%;margin:0 auto;padding-bottom:20px;">
+			<a href="{{ path('all_registration') }}"><button class="submit submit_blue" type="submit" >  Go ! </button></a> 
+		</div>
+	</div>
 </div>
 <div class="clear"></div>
 {% endblock %}

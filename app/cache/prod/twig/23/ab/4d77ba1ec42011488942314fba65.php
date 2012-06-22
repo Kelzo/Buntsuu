@@ -28,16 +28,30 @@ class __TwigTemplate_23ab4d77ba1ec42011488942314fba65 extends Twig_Template
     public function block_body($context, array $blocks = array())
     {
         // line 3
-        echo "\t<form action=\"\" class=\"side-by-side clearfix\" method=\"post\" ";
+        echo "<div id=\"first\" class=\"content_design\">
+\t<form action=\"\" class=\"side-by-side clearfix\" method=\"post\" ";
+        // line 4
         echo $this->env->getExtension('form')->renderEnctype($this->getContext($context, "form"));
         echo ">
         ";
-        // line 4
+        // line 5
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "form"));
         echo "
-        <input type=\"submit\" />
+        <button class=\"submit submit_blue\" type=\"submit\" >  Validate </button>
     </form>
-    
+</div>
+<div id=\"second_large\"><img src=\"";
+        // line 9
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/ban.png"), "html", null, true);
+        echo "\" alt=\"banner\"/></div>
+
+
+<script>
+    \$(\"#second_large\").css('opacity','0');
+\t\$(\"#second_large\").ready(function(){
+\t\t\$(\"#second_large\").animate({opacity: 1},3000)
+\t});
+</script>
 ";
     }
 
@@ -53,6 +67,6 @@ class __TwigTemplate_23ab4d77ba1ec42011488942314fba65 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  34 => 4,  29 => 3,  26 => 2,);
+        return array (  43 => 9,  36 => 5,  32 => 4,  29 => 3,  26 => 2,);
     }
 }

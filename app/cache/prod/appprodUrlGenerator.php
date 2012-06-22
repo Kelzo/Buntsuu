@@ -21,6 +21,7 @@ class appprodUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
        'member_index' => true,
        'member_search' => true,
        'member_profile' => true,
+       'member_profile_target' => true,
        'member_preference' => true,
        'member_stamp' => true,
        'member_chat' => true,
@@ -87,6 +88,11 @@ class appprodUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerat
     private function getmember_profileRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::profileAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/member/profile',  ),));
+    }
+
+    private function getmember_profile_targetRouteInfo()
+    {
+        return array(array (  0 => 'target',), array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::profileTargetAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'target',  ),  1 =>   array (    0 => 'text',    1 => '/member/profile',  ),));
     }
 
     private function getmember_preferenceRouteInfo()

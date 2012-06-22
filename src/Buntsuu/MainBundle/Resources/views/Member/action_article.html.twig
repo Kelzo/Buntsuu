@@ -1,5 +1,7 @@
 <h2>News</h2>
 <div id="article"  class="{{ article.id }}">
 	{{ article.message }}
-	{{ article.date |date('Y-m-d H:i') }}
+	<br/>
+	<br/>
+	<div style="text-align:right; font-size:10px; color:grey;">{{ article.date |date('l jS F Y h:i:s A') }}</div>
 </div>

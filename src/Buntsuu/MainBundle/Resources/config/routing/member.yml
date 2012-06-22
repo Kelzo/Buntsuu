@@ -9,6 +9,10 @@ member_search:
 member_profile:
     pattern:   /profile
     defaults:  { _controller: BuntsuuMainBundle:Member:profile }
+    
+member_profile_target:
+    pattern:   /profile/{target}
+    defaults:  { _controller: BuntsuuMainBundle:Member:profileTarget }
 
 member_preference:
     pattern:  /preference

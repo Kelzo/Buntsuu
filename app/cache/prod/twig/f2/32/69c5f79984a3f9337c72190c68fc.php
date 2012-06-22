@@ -29,7 +29,11 @@ class __TwigTemplate_f23269c5f79984a3f9337c72190c68fc extends Twig_Template
     {
         // line 4
         echo "
-<h2> Stamp </h2>
+<h2 id=\"title_page\"> Stamps </h2><img id=\"mini\" src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/stamp.png"), "html", null, true);
+        echo "\" alt=\"stamp\"/>
+<div class=\"clear\"></div>
 
 ";
     }
@@ -46,6 +50,6 @@ class __TwigTemplate_f23269c5f79984a3f9337c72190c68fc extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  29 => 4,  26 => 3,);
+        return array (  32 => 5,  29 => 4,  26 => 3,);
     }
 }

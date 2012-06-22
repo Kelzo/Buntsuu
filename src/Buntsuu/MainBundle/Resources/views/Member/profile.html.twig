@@ -2,14 +2,21 @@
 
 {%block  principal_content %}
 
-<h2> Profile </h2>
-
-{{ user.username }}
-{{ user.gender }}
-{{ user.skype }}
-{{ user.facebook }}
-{{ user.birthdate | date('Y-m-d') }}
-
+<h2 id="title_page"> Profile </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/profil.png') }}" alt="profile"/>
+<div class="clear"></div>
+<div id="content_third">
+<div class="classic_top">{% if user.gender == 0 %}
+<img img class="mini" src="{{ asset('bundles/buntsuumain/images/0.png') }}" alt="skype"/>
+{% else %}
+<img img class="mini" src="{{ asset('bundles/buntsuumain/images/1.png') }}" alt="skype"/>
+{% endif %} {{ user.username }}</div>
+<div class="email"><img class="mini" src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/>  Email </div>
+<div class="letter"><img class="mini"src="{{ asset('bundles/buntsuumain/images/letter.png') }}" alt="letter"/>  Adress </div>
+<div class="classic_bottom"><img class="mini" src="{{ asset('bundles/buntsuumain/images/birthday.png') }}" alt="skype"/> Birthday {{ user.birthdate }}</div>
+<div class="skype" ><img class="mini" src="{{ asset('bundles/buntsuumain/images/skype.png') }}" alt="skype"/>  {{ user.skype }}</div>
+<div class="facebook"><img class="mini" src="{{ asset('bundles/buntsuumain/images/facebook.png') }}" alt="facebook"/>  {{ user.facebook }}</div>
+</div>
+<div id="content_first">
 {% if preference is not empty %}
 <h3>My preferences :</h3>
 	{{ preference.skype }}
@@ -21,4 +28,7 @@
 	<br/>
 	<a href="{{ path('member_preference')  }}"> Preferences </a>
 {% endif %}
+</div>
+<div class="clear"></div>
 {% endblock %}
+

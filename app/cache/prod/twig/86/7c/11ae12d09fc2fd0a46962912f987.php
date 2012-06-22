@@ -42,7 +42,7 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
         // line 8
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("logout"), "html", null, true);
         echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/profil.png"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/buntsuumain/images/disconnect.png"), "html", null, true);
         echo "\" /><br/> Logout </a></li>
 \t<li><a href=\"";
         // line 9
@@ -74,7 +74,7 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
 </div>
 
 
-        <div id=\"content\">
+        <div id=\"content\" class=\"content_design\">
             ";
         // line 20
         $this->displayBlock('principal_content', $context, $blocks);
@@ -106,6 +106,6 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 21,  88 => 20,  80 => 23,  78 => 20,  65 => 12,  59 => 11,  53 => 10,  47 => 9,  41 => 8,  35 => 7,  30 => 4,  27 => 3,  118 => 59,  112 => 56,  105 => 52,  99 => 49,  84 => 37,  69 => 24,  63 => 20,  61 => 19,  52 => 13,  48 => 12,  44 => 11,  37 => 7,  33 => 6,  29 => 4,  26 => 3,);
+        return array (  91 => 21,  88 => 20,  80 => 23,  78 => 20,  65 => 12,  59 => 11,  53 => 10,  47 => 9,  41 => 8,  35 => 7,  30 => 4,  27 => 3,);
     }
 }
