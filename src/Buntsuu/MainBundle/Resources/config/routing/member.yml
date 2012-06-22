@@ -10,6 +10,10 @@ member_profile:
     pattern:   /profile
     defaults:  { _controller: BuntsuuMainBundle:Member:profile }
     
+member_profile_edit:
+    pattern:   /profile/edit
+    defaults:  { _controller: BuntsuuMainBundle:Member:editProfile }
+    
 member_profile_target:
     pattern:   /profile/{target}
     defaults:  { _controller: BuntsuuMainBundle:Member:profileTarget }

@@ -18,12 +18,29 @@
 </div>
 <div id="content_first">
 {% if preference is not empty %}
-<h3>My preferences :</h3>
-	{{ preference.skype }}
-	{{ preference.facebook }}
-	{{ preference.letter }}
-	{{ preference.email }}
+<h3>{{ user.username }} preferences :</h3>
+	<div>
+		<h4>My spoken language(s) :</h4>
+		{{ preference.firstLanguageSpoken.name }}
+		{{ preference.secondLanguageSpoken.name }}
+		{{ preference.thirdLanguageSpoken.name }}
+	</div>
+	<div>
+		<h4>My searched language(s) :</h4>
+		{{ preference.firstLanguageSearched.name }}
+		{{ preference.secondLanguageSearched.name }}
+		{{ preference.thirdLanguageSearched.name }}
+	</div>
+	<div>
+		<h4>I want to talk by : </h4>
+		Skype : {% if preference.skype == 1 %} Yes {% else %} No {% endif %}
+		Facebook : {% if preference.facebook == 1 %} Yes {% else %} No {% endif %}
+		Letter : {% if preference.letter == 1 %} Yes {% else %} No {% endif %}
+		Email : {% if preference.email == 1 %} Yes {% else %} No {% endif %}
+	</div>
 {% endif %}
 </div>
+<a href=""> <button class="submit submit_blue">Send a message</button> </a>
+<a href=""> <button class="submit submit_purple"> Add a comment </button> </a>
 <div class="clear"></div>
 {% endblock %}

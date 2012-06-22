@@ -11,24 +11,48 @@
 <img img class="mini" src="{{ asset('bundles/buntsuumain/images/1.png') }}" alt="skype"/>
 {% endif %} {{ user.username }}</div>
 <div class="email"><img class="mini" src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/>  Email </div>
-<div class="letter"><img class="mini"src="{{ asset('bundles/buntsuumain/images/letter.png') }}" alt="letter"/>  Adress </div>
-<div class="classic_bottom"><img class="mini" src="{{ asset('bundles/buntsuumain/images/birthday.png') }}" alt="skype"/> Birthday {{ user.birthdate }}</div>
+<div class="letter"><img class="mini"src="{{ asset('bundles/buntsuumain/images/letter.png') }}" alt="letter"/>  
+	{% if user.adress is not empty  %}{{ user.adress }}{% else %} 77, LPCM Street {% endif %} 
+<br/>
+	 {% if user.zip is not empty  %}{{ user.zip }}{% else %} 10110 {% endif %} {% if user.city is not empty  %}{{ user.city }}{% else %} BUNTSUU CITY {% endif %}
+<br/>
+	 {% if user.country is not empty  %}{{ user.country }}{% else %} BUNTSUU LAND {% endif %}
+</div>
+<div class="classic_bottom"><img class="mini" src="{{ asset('bundles/buntsuumain/images/birthday.png') }}" alt="skype"/> {% if user.birthdate is not empty  %}{{ user.birthdate | date ('m.d.y') }}{% else %} I was never born ? {% endif %}</div>
 <div class="skype" ><img class="mini" src="{{ asset('bundles/buntsuumain/images/skype.png') }}" alt="skype"/>  {{ user.skype }}</div>
 <div class="facebook"><img class="mini" src="{{ asset('bundles/buntsuumain/images/facebook.png') }}" alt="facebook"/>  {{ user.facebook }}</div>
 </div>
 <div id="content_first">
 {% if preference is not empty %}
 <h3>My preferences :</h3>
-	{{ preference.skype }}
-	{{ preference.facebook }}
-	{{ preference.letter }}
-	{{ preference.email }}
+	<div>
+		<h4>My spoken language(s) :</h4>
+		{{ preference.firstLanguageSpoken.name }}
+		{{ preference.secondLanguageSpoken.name }}
+		{{ preference.thirdLanguageSpoken.name }}
+	</div>
+	<div>
+		<h4>My searched language(s) :</h4>
+		{{ preference.firstLanguageSearched.name }}
+		{{ preference.secondLanguageSearched.name }}
+		{{ preference.thirdLanguageSearched.name }}
+	</div>
+	<div>
+		<h4>I want to talk by : </h4>
+		Skype : {% if preference.skype == 1 %} Yes {% else %} No {% endif %}
+		Facebook : {% if preference.facebook == 1 %} Yes {% else %} No {% endif %}
+		Letter : {% if preference.letter == 1 %} Yes {% else %} No {% endif %}
+		Email : {% if preference.email == 1 %} Yes {% else %} No {% endif %}
+	</div>
 {% else %}
 	Your preference aren't selected, please do it !
 	<br/>
 	<a href="{{ path('member_preference')  }}"> Preferences </a>
 {% endif %}
 </div>
+<a href="{{ path('member_profile_edit') }}"> <button class="submit submit_green">Modify Informations</button> </a>
+<a href="{{ path('member_preference') }}"> <button class="submit submit_green">Modify Preferences </button> </a>
 <div class="clear"></div>
+
 {% endblock %}
 

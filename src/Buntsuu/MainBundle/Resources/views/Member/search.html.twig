@@ -4,30 +4,78 @@
 
 <h2 id="title_page"> Search </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/search.png') }}" alt="search"/>
 <div class="clear"></div>
-<h3>Precise</h3>
-{%  for user in pUsers %}
-<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
-	<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
-</div>
-{% endfor %}
-<div class="clear"></div>
-<h3>Balanced</h3>
-{%  for user in sUsers %}
-<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
-	<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
-</div>
-{% endfor %}
-<div class="clear"></div>
-<h3>Large</h3>
-{%  for user in tUsers %}
-<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
-	<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+<button id="go_precise" class="submit submit_special">Precise</button>
+<button id="go_balanced" class="submit submit_special">Balanced</button>
+<button id="go_large" class="submit submit_special">Large</button>
+<button id="go_verylarge" class="submit submit_special">Very Large</button>
+
+<div id="precise">
+	{%  for user in pUsers %}
+	<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+	</div>
+	{% endfor %}
 </div>
 
-{% endfor %}
 <div class="clear"></div>
-<h3>Very Large</h3>
+<div id="balanced">
+	<h3></h3>
+	{%  for user in sUsers %}
+	<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+	</div>
+	{% endfor %}
+</div>
 
+<div class="clear"></div>
+<div id="large">
+	<h3></h3>
+	{%  for user in tUsers %}
+	<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+	</div>
+	{% endfor %}
+</div>
+<div class="clear"></div>
+<h3></h3>
+
+<script>
+	$("#balanced").hide();
+	$("#large").hide();
+
+	/*PRECISE SELECTION*/
+	$("#go_precise").click(function(){
+		$("#balanced").hide();
+		$("#large").hide();
+		$("#verylarge").hide();
+		$("#precise").show();
+	});
+
+	/*BALANCED SELECTION*/
+	$("#go_balanced").click(function(){
+		$("#precise").hide();
+		$("#large").hide();
+		$("#verylarge").hide();
+		$("#balanced").show();
+	});
+
+	/*LARGE SELECTION*/
+	$("#go_large").click(function(){
+		$("#balanced").hide();
+		$("#precise").hide();
+		$("#verylarge").hide();
+		$("#large").show();
+	});
+
+	/*VERYLARGE SELECTION*/
+	$("#go_verylarge").click(function(){
+		$("#balanced").hide();
+		$("#large").hide();
+		$("#precise").hide();
+		$("#verylarge").show();
+	});
+	
+</script>
 
 
 

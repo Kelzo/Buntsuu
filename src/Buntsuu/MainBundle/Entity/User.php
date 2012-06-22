@@ -42,6 +42,21 @@ class User implements UserInterface {
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;
+    
+    /**
+     * @ORM\Column(type="string", length=120, nullable="true")
+     */
+    private $adress;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable="true")
+     */
+    private $city;
+    
+    /**
+     * @ORM\Column(type="string", length=80, nullable="true")
+     */
+    private $country;
 
     /**
      * @ORM\Column(name="is_active", type="boolean")
@@ -81,6 +96,13 @@ class User implements UserInterface {
      * @ORM\Column(name="birthdate", type="date",nullable="true")
      */
     private $birthdate;
+    
+    /**
+     * @var integer $zip
+     *
+     * @ORM\Column(name="zip", type="integer",nullable="true")
+     */
+    private $zip;
     
     
 
@@ -281,6 +303,90 @@ class User implements UserInterface {
 	public function unserialize($data)
 	{
 		$this->username = unserialize($data);
+	}
+	
+	/**
+	* Set adress
+	*
+	* @param  string adress
+	*/
+	public function setAdress($adress)
+	{
+	    $this->adress = $adress;
+	    return $this;
+	}
+	 
+	/**
+	*Get adress 
+	*
+	* @return string
+	*/
+	public function getAdress()
+	{
+	    return $this->adress;
+	}
+	
+	/**
+	* Set city
+	*
+	* @param  string city
+	*/
+	public function setCity($city)
+	{
+	    $this->city = $city;
+	    return $this;
+	}
+	 
+	/**
+	*Get city 
+	*
+	* @return string
+	*/
+	public function getCity()
+	{
+	    return $this->city;
+	}
+	
+	/**
+	* Set country
+	*
+	* @param  string country
+	*/
+	public function setCountry($country)
+	{
+	    $this->country = $country;
+	    return $this;
+	}
+	 
+	/**
+	*Get country 
+	*
+	* @return string
+	*/
+	public function getCountry()
+	{
+	    return $this->country;
+	}
+	
+	/**
+	* Set zip
+	*
+	* @param  integer zip
+	*/
+	public function setZip($zip)
+	{
+	    $this->zip = $zip;
+	    return $this;
+	}
+	 
+	/**
+	*Get zip 
+	*
+	* @return integer
+	*/
+	public function getZip()
+	{
+	    return $this->zip;
 	}
 	
 }

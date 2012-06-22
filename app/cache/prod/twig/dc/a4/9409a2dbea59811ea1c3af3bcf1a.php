@@ -96,9 +96,9 @@ class __TwigTemplate_dca49409a2dbea59811ea1c3af3bcf1a extends Twig_Template
 
 <form name=\"myform\" class=\"noPadding\"  onSubmit=\"return(false);\">
 \t<textarea name=\"limitedtextarea\" onKeyDown=\"limitText(this.form.limitedtextarea,this.form.countdown,80);\" 
-onKeyUp=\"limitText(this.form.limitedtextarea,this.form.countdown,80);\" type=\"text\" id=\"message\" style=\"float:left;height:50px; width:40%;\" value=\"test\" /> 
+onKeyUp=\"limitText(this.form.limitedtextarea,this.form.countdown,80);\" type=\"text\" id=\"message\"  value=\"test\" /> 
 </textarea>
-\t<button id=\"submit\" value=\"Send\" style=\"float:left; height:56px;\">Send</button>
+\t<button id=\"submit\" class=\"submit submit_blue\" value=\"Send\">Send</button>
 \t<div class=\"clear\"></div>
 \t<font size=\"1\">
 You have <input readonly class=\"noDesign\" type=\"text\" name=\"countdown\" size=\"3\" value=\"80\"> characters left. (Maximum characters: 80)</font>

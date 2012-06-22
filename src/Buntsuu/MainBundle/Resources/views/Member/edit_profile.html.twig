@@ -1,0 +1,7 @@
+{% extends "BuntsuuMainBundle:Member:layout.html.twig" %}
+{% block principal_content %}
+	<form action="" class="side-by-side clearfix" method="post" {{ form_enctype(form) }}>
+ 		{{ form_widget(form) }}
+        <button class="submit submit_blue" type="submit" >  Validate </button>
+    </form>
+{% endblock %}

@@ -70,15 +70,17 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
         echo "\"  /><br/> Chats </a></li>
 \t</ul>
 \t<div class=\"clear\"></div>
- Notifications
+\t<div id=\"notification\">
+\t \tNotifications
+\t</div>
 </div>
 
 
         <div id=\"content\" class=\"content_design\">
             ";
-        // line 20
+        // line 22
         $this->displayBlock('principal_content', $context, $blocks);
-        // line 23
+        // line 25
         echo "     \t</div>
 
 <div class=\"clear\"></div>
@@ -86,10 +88,10 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
 ";
     }
 
-    // line 20
+    // line 22
     public function block_principal_content($context, array $blocks = array())
     {
-        // line 21
+        // line 23
         echo "            
             ";
     }
@@ -106,6 +108,6 @@ class __TwigTemplate_867c11ae12d09fc2fd0a46962912f987 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  91 => 21,  88 => 20,  80 => 23,  78 => 20,  65 => 12,  59 => 11,  53 => 10,  47 => 9,  41 => 8,  35 => 7,  30 => 4,  27 => 3,);
+        return array (  93 => 23,  90 => 22,  82 => 25,  80 => 22,  65 => 12,  59 => 11,  53 => 10,  47 => 9,  41 => 8,  35 => 7,  30 => 4,  27 => 3,);
     }
 }

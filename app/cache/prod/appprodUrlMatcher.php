@@ -72,6 +72,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::profileAction',  '_route' => 'member_profile',);
             }
 
+            // member_profile_edit
+            if ($pathinfo === '/member/profile/edit') {
+                return array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::editProfileAction',  '_route' => 'member_profile_edit',);
+            }
+
             // member_profile_target
             if (0 === strpos($pathinfo, '/member/profile') && preg_match('#^/member/profile/(?P<target>[^/]+?)$#s', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Buntsuu\\MainBundle\\Controller\\MemberController::profileTargetAction',)), array('_route' => 'member_profile_target'));

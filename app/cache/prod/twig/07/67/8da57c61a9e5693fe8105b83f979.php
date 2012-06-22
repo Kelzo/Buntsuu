@@ -86,27 +86,77 @@ class __TwigTemplate_07678da57c61a9e5693fe8105b83f979 extends Twig_Template
         // line 20
         if ((!twig_test_empty($this->getContext($context, "preference")))) {
             // line 21
-            echo "<h3>My preferences :</h3>
-\t";
-            // line 22
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "preference"), "skype"), "html", null, true);
-            echo "
-\t";
-            // line 23
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "preference"), "facebook"), "html", null, true);
-            echo "
-\t";
+            echo "<h3>";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "user"), "username"), "html", null, true);
+            echo " preferences :</h3>
+\t<div>
+\t\t<h4>My spoken language(s) :</h4>
+\t\t";
             // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "preference"), "letter"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "firstLanguageSpoken"), "name"), "html", null, true);
             echo "
-\t";
+\t\t";
             // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "preference"), "email"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "secondLanguageSpoken"), "name"), "html", null, true);
             echo "
+\t\t";
+            // line 26
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "thirdLanguageSpoken"), "name"), "html", null, true);
+            echo "
+\t</div>
+\t<div>
+\t\t<h4>My searched language(s) :</h4>
+\t\t";
+            // line 30
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "firstLanguageSearched"), "name"), "html", null, true);
+            echo "
+\t\t";
+            // line 31
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "secondLanguageSearched"), "name"), "html", null, true);
+            echo "
+\t\t";
+            // line 32
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getContext($context, "preference"), "thirdLanguageSearched"), "name"), "html", null, true);
+            echo "
+\t</div>
+\t<div>
+\t\t<h4>I want to talk by : </h4>
+\t\tSkype : ";
+            // line 36
+            if (($this->getAttribute($this->getContext($context, "preference"), "skype") == 1)) {
+                echo " Yes ";
+            } else {
+                echo " No ";
+            }
+            // line 37
+            echo "\t\tFacebook : ";
+            if (($this->getAttribute($this->getContext($context, "preference"), "facebook") == 1)) {
+                echo " Yes ";
+            } else {
+                echo " No ";
+            }
+            // line 38
+            echo "\t\tLetter : ";
+            if (($this->getAttribute($this->getContext($context, "preference"), "letter") == 1)) {
+                echo " Yes ";
+            } else {
+                echo " No ";
+            }
+            // line 39
+            echo "\t\tEmail : ";
+            if (($this->getAttribute($this->getContext($context, "preference"), "email") == 1)) {
+                echo " Yes ";
+            } else {
+                echo " No ";
+            }
+            // line 40
+            echo "\t</div>
 ";
         }
-        // line 27
+        // line 42
         echo "</div>
+<a href=\"\"> <button class=\"submit submit_blue\">Send a message</button> </a>
+<a href=\"\"> <button class=\"submit submit_purple\"> Add a comment </button> </a>
 <div class=\"clear\"></div>
 ";
     }
@@ -123,6 +173,6 @@ class __TwigTemplate_07678da57c61a9e5693fe8105b83f979 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  107 => 27,  102 => 25,  98 => 24,  94 => 23,  90 => 22,  87 => 21,  85 => 20,  77 => 17,  71 => 16,  65 => 15,  61 => 14,  57 => 13,  52 => 12,  46 => 11,  40 => 9,  38 => 8,  32 => 5,  29 => 4,  26 => 3,);
+        return array (  155 => 42,  151 => 40,  144 => 39,  137 => 38,  130 => 37,  124 => 36,  117 => 32,  113 => 31,  109 => 30,  102 => 26,  98 => 25,  94 => 24,  87 => 21,  85 => 20,  77 => 17,  71 => 16,  65 => 15,  61 => 14,  57 => 13,  52 => 12,  46 => 11,  40 => 9,  38 => 8,  32 => 5,  29 => 4,  26 => 3,);
     }
 }

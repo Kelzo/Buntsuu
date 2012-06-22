@@ -174,10 +174,58 @@ class BuntsuuMainBundleEntityUserProxy extends \Buntsuu\MainBundle\Entity\User i
         return parent::unserialize($data);
     }
 
+    public function setAdress($adress)
+    {
+        $this->__load();
+        return parent::setAdress($adress);
+    }
+
+    public function getAdress()
+    {
+        $this->__load();
+        return parent::getAdress();
+    }
+
+    public function setCity($city)
+    {
+        $this->__load();
+        return parent::setCity($city);
+    }
+
+    public function getCity()
+    {
+        $this->__load();
+        return parent::getCity();
+    }
+
+    public function setCountry($country)
+    {
+        $this->__load();
+        return parent::setCountry($country);
+    }
+
+    public function getCountry()
+    {
+        $this->__load();
+        return parent::getCountry();
+    }
+
+    public function setZip($zip)
+    {
+        $this->__load();
+        return parent::setZip($zip);
+    }
+
+    public function getZip()
+    {
+        $this->__load();
+        return parent::getZip();
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'username', 'salt', 'password', 'email', 'isActive', 'roles', 'gender', 'skype', 'facebook', 'birthdate');
+        return array('__isInitialized__', 'id', 'username', 'salt', 'password', 'email', 'adress', 'city', 'country', 'isActive', 'roles', 'gender', 'skype', 'facebook', 'birthdate', 'zip');
     }
 
     public function __clone()

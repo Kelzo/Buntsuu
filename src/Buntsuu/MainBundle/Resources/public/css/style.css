@@ -389,7 +389,8 @@ color:#fff;
 width:15em;
 height: 2em;
 text-align:center;
-cursor:pointer;	
+cursor:pointer;
+margin-left:1em;
 }
 
 .submit_green {background:#23b047;}
@@ -527,7 +528,16 @@ width:15px;
 border:none;
 display:inline;
 }
+#message{
+float: left;
+height: 50px;
+width: 40%;
+}
 
+#submit{
+float:left;
+height:56px;
+}
 /*WARNING MESSAGE*/
 #warning{
 background:#fff;
@@ -601,26 +611,50 @@ div {
  #first{
 width:100%;
  }
+ 
+ #second{
+	width:100%;
+}
+
+#third{
+	width:100%;
+}
   
 .content{
 width:85%;
 margin:0 auto;
 }
 
-#second{
-	width:100%;
-}
-
 }
 
 @media screen and (min-width: 10px) and (max-width: 390px) {
- div {
-   display:block;
-   clear:both;
+
+ html,body{
+ width:100%;
+ margin:0;
+ padding:0;
  }
  
- #first,#second,#menu,#content{
+div {
+   display:block;
+   clear:both;
+}
+ 
+ #first,#second,#third,#menu,#content{
 width:100%;
+margin:0 auto;
+border:none;
+border-radius:0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+-ms-border-radius:0;
+border-radius: 0;
+background:#efebf2;
+ }
+ 
+ .general_content{
+ margin:0 auto;
+ padding:0;
  }
  
  #content_first,#content_second{
@@ -628,21 +662,87 @@ width:100%;
  	margin:0 auto;
  }
  
- #menu img{
+ 
+input[type=text],input[type=password],input[type=email], select{
+display:block;
+width:100%;
+height:2em;
+margin-bottom:10px;
+}
+
+.chzn-single,.chzn-select,.chzn-done,.chzn-container ,.chzn-container-single{
+width:100%;
+}
+
+ img{
  display:none;
+ }
+ 
+ .submit{
+ width:100%;
+ height:3em;
+ margin:0;
+ padding:0;
+ border:none;
+ }
+ 
+ #menu{
+ background:none;
  }
  
  #menu a{
  width:100%;
  position:static;
- }
+ -webkit-border-radius:0;
+-moz-border-radius: 0;
+-ms-border-radius:0;
+border-radius: 0;
+-moz-box-shadow: 0;
+-webkit-box-shadow:0;
+box-shadow:0;
+background:#efebf2;
+border:1px solid #e9e6ec;
+}
  
- #menu ul, #menu li{
+#content_first,#content_second,#content_third,#chat,#target,#submit,#message{
+margin:0 auto;
+width:95%;
+-webkit-border-radius:0;
+-moz-border-radius: 0;
+-ms-border-radius:0;
+border-radius: 0;
+}
+
+.facebook{
+-webkit-border-radius:0;
+-moz-border-radius: 0;
+-ms-border-radius:0;
+border-radius: 0;
+}
+
+#write{
+width:95%;	
+}
+
+
+ #menu a:active{border:1px solid #e9e6ec}
+ #menu li{
+  width:50%;
+ height:auto;
+ display:block;
+ padding:0;
+ margin:0;
+ float:left;
+ background:#efebf2;
+ }
+ #menu ul{
  width:100%;
  height:auto;
  display:block;
  padding:0;
  margin:0;
+ float:left;
+
  }
 
 #second form{
@@ -659,3 +759,5 @@ margin:0 auto;
 }
 
 /*END MEDIAQUERIES */
+
+/* GOSSELET Sébastien -> sebastien-gosselet.fr */

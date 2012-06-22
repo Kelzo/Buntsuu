@@ -54,7 +54,9 @@ class AllController extends Controller
    					$user->setPassword($password);
    					$em = $this->getDoctrine()->getEntityManager();
    					$em->persist($user);
-   					$em->flush();  					
+   					$em->flush();  	
+
+   					return $this->redirect($this->generateUrl('all_index'));
    				}
    				
    	}

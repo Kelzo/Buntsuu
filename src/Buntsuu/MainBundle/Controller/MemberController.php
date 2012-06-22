@@ -2,6 +2,8 @@
 
 namespace Buntsuu\MainBundle\Controller;
 
+use Buntsuu\MainBundle\Form\UserProfileType;
+
 use Buntsuu\MainBundle\Entity\Language;
 
 use Buntsuu\MainBundle\Entity\Message;
@@ -74,6 +76,27 @@ class MemberController extends Controller
     	$user= $this->container->get('security.context')->getToken()->getUser();
     	$preference = $em->getRepository('BuntsuuMainBundle:Preference')->findOneByUser($user->getId());
     	return $this->render('BuntsuuMainBundle:Member:profile.html.twig',array("user"=>$user,"preference"=>$preference));
+    }
+    
+    public function editProfileAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getEntityManager();
+    	$user= $this->container->get('security.context')->getToken()->getUser();
+    	$form = $this->createForm(new UserProfileType(),$user);
+    	
+    	if($request->getMethod()=="POST")
+    	{
+    		$form->bindRequest($request);
+   			if($form->isValid())
+    		{
+				$em->persist($user);
+    			$em->flush();
+    			$preference = $em->getRepository('BuntsuuMainBundle:Preference')->findOneByUser($user->getId());
+    			return $this->redirect($this->generateUrl('member_profile',array('user'=>$user,'preference'=>$preference)));
+    		}
+    	}
+    	
+    	return $this->render('BuntsuuMainBundle:Member:edit_profile.html.twig',array("form"=>$form->createView()));
     }
     
     public function profileTargetAction($target)
@@ -231,7 +254,7 @@ class MemberController extends Controller
     			$em->persist($preference);
     			$em->flush();
     			
-    			return$this->redirect($this->generateUrl('member_profile',array('user'=>$user,'preference'=>$preference)));
+    			return $this->redirect($this->generateUrl('member_profile',array('user'=>$user,'preference'=>$preference)));
     		}
     			
     			
