@@ -27,8 +27,8 @@ class ArticleRepository extends EntityRepository
 	public function theNext($id)
 	{
 		$qb = $this->createQueryBuilder('a')
-		->where('a.id < :id')
-		->orderBy('a.date','DESC')
+		->where('a.id > :id')
+		->orderBy('a.date','ASC')
 		->setMaxResults(1)
 		->setParameter("id", $id);
 	
@@ -40,7 +40,7 @@ class ArticleRepository extends EntityRepository
 	public function thePrevious($id)
 	{
 		$qb = $this->createQueryBuilder('a')
-		->where('a.id > :id')
+		->where('a.id < :id')
 		->orderBy('a.date','DESC')
 		->setMaxResults(1)
 		->setParameter("id", $id);

@@ -4,8 +4,9 @@
 
 <h2 id="title_page"> Home </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/home.png') }}" alt="home"/>
 <div class="clear"></div>
-<img src="{{ asset('bundles/buntsuumain/images/next.png') }}" alt="next" id="next_article" class="action" />
-<img src="{{ asset('bundles/buntsuumain/images/previous.png') }}" alt="previous" id="previous_article" class="action" />
+<button id="previous_article" class="action submit_special submit_yellow">Previous</button>
+<button id="next_article" class="action submit_special  submit_yellow">Next</button>
+
 <div class="clear"></div>
 <div id="content_first" ">
 	<h2>News</h2>
@@ -16,12 +17,17 @@
 	</div>
 </div>
 <div id="content_second">
-	<h2>Suggestions</h2>
-	<div id=""></div>
-{% if preference is empty %}
-<h3></h3>
-Do you want to see your suggestions ?! So come on and complete your preferences HERE now  ^^ ! 
-
+	<h2>Suggestions</h2>	
+{% if preferences is empty  %}
+<div id=""></div>
+{% else %}
+	{%  for user in tUsers  %}
+		{%  if loop.index < 5 %}
+			<div class="user_case_{% if user.gender == null  %}male{% else %}female{% endif %}">
+				<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+			</div>
+		{% endif %}
+	{% endfor %}
 {%  endif %}
 </div>
 <div class="clear"></div>
@@ -32,7 +38,7 @@ Do you want to see your suggestions ?! So come on and complete your preferences 
 	/* CHANGEMENT D'ARTICLE AU CLIQUE SUR UNE FLECHE */
 	$(".action").click(function(){
     id = $("#article").attr('class');
-    action = $(this).attr('alt');
+    action = $(this).html();
        	 var DATA ='id='+id+'&action='+action;
 		 $.ajax({
 		        type: "POST",
@@ -46,21 +52,6 @@ Do you want to see your suggestions ?! So come on and complete your preferences 
 		  });
     	});
 
-	/* CHANGEMENT D'IMAGE AU SURVOL */
-	$("#next_article").hover(function(){
-		$("#next_article").attr('src','{{ asset("bundles/buntsuumain/images/next_white.png") }}');
-		},
-		function () {
-		$("#next_article").attr('src','{{ asset("bundles/buntsuumain/images/next.png") }}'); 
-	});
-
-	$("#previous_article").hover(function(){
-		$("#previous_article").attr('src','{{ asset("bundles/buntsuumain/images/previous_white.png") }}');
-		},
-		function () {
-		$("#previous_article").attr('src','{{ asset("bundles/buntsuumain/images/previous.png") }}'); 
-	});
-	
 </script>
 
 {% endblock %}

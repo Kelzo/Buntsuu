@@ -1,0 +1,45 @@
+{% extends "BuntsuuMainBundle:All:layout.html.twig" %}
+
+{%block  principal_content %}
+
+<h2 id="title_page"> Profile </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/profil.png') }}" alt="profile"/>
+<div class="clear"></div>
+<div id="content_third">
+	<div class="classic_top">{% if user.gender == 0 %}
+		<img src="{{ asset('bundles/buntsuumain/images/0.png') }}" alt="skype"/>
+		{% else %}
+		<img src="{{ asset('bundles/buntsuumain/images/1.png') }}" alt="skype"/>
+		{% endif %} {{ user.username }}
+	</div>
+	<div>
+		Subscribe if you want to see all informations
+	</div>
+</div>
+<div id="content_first">
+{% if preference is not empty %}
+<h3>{{ user.username }} preferences :</h3>
+	<div>
+		<h4>My spoken language(s) :</h4>
+		{{ preference.firstLanguageSpoken.name }}
+		{{ preference.secondLanguageSpoken.name }}
+		{{ preference.thirdLanguageSpoken.name }}
+	</div>
+	<div>
+		<h4>My searched language(s) :</h4>
+		{{ preference.firstLanguageSearched.name }}
+		{{ preference.secondLanguageSearched.name }}
+		{{ preference.thirdLanguageSearched.name }}
+	</div>
+	<div>
+		<h4>I want to talk by : </h4>
+		Skype : {% if preference.skype == 1 %} Yes {% else %} No {% endif %}
+		Facebook : {% if preference.facebook == 1 %} Yes {% else %} No {% endif %}
+		Letter : {% if preference.letter == 1 %} Yes {% else %} No {% endif %}
+		Email : {% if preference.email == 1 %} Yes {% else %} No {% endif %}
+	</div>
+{% endif %}
+</div>
+<!-- <a href="{{ path('member_target_message',{'target':user.username}) }}"> <button class="submit submit_purple">Send a message</button> </a>-->
+<!-- <a href=""> <button class="submit submit_purple"> Add a comment </button> </a> -->
+<div class="clear"></div>
+{% endblock %}

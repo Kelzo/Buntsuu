@@ -24,6 +24,6 @@ class LanguageType extends AbstractType
 
     public function getName()
     {
-         return 'buntsuu_mainbundle_usertype';
+         return 'buntsuu_mainbundle_languagetype';
     }
 }

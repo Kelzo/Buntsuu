@@ -10,7 +10,7 @@
 {% else %}
 <img img class="mini" src="{{ asset('bundles/buntsuumain/images/1.png') }}" alt="skype"/>
 {% endif %} {{ user.username }}</div>
-<div class="email"><img class="mini" src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/>  Email </div>
+<div class="email"><img class="mini" src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/>  {{ user.email }} </div>
 <div class="letter"><img class="mini"src="{{ asset('bundles/buntsuumain/images/letter.png') }}" alt="letter"/>  
 	{% if user.adress is not empty  %}{{ user.adress }}{% else %} 77, LPCM Street {% endif %} 
 <br/>
@@ -50,8 +50,8 @@
 	<a href="{{ path('member_preference')  }}"> Preferences </a>
 {% endif %}
 </div>
-<a href="{{ path('member_profile_edit') }}"> <button class="submit submit_green">Modify Informations</button> </a>
-<a href="{{ path('member_preference') }}"> <button class="submit submit_green">Modify Preferences </button> </a>
+<a href="{{ path('member_profile_edit') }}"> <button class="submit_special submit_green">Modify Informations</button> </a>
+<a href="{{ path('member_preference') }}"> <button class="submit_special submit_pink">Modify Preferences </button> </a>
 <div class="clear"></div>
 
 {% endblock %}

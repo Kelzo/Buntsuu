@@ -10,7 +10,9 @@ class UserProfileType extends AbstractType
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder
-			->add('gender')
+			->add('gender', 'choice', array(
+    			'choices'   => array('0' => 'Male', '1' => 'Female'),
+    			'required'  => false))
 			->add('facebook')
 			->add('skype')
 			->add('birthdate','birthday')
@@ -19,6 +21,6 @@ class UserProfileType extends AbstractType
 
     public function getName()
     {
-         return 'buntsuu_mainbundle_usertype';
+         return 'buntsuu_mainbundle_userprofiletype';
     }
 }

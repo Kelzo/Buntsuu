@@ -4,10 +4,10 @@
 
 <h2 id="title_page"> Search </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/search.png') }}" alt="search"/>
 <div class="clear"></div>
-<button id="go_precise" class="submit submit_special">Precise</button>
-<button id="go_balanced" class="submit submit_special">Balanced</button>
-<button id="go_large" class="submit submit_special">Large</button>
-<button id="go_verylarge" class="submit submit_special">Very Large</button>
+<button id="go_precise" class="submit_special submit_purple">Precise</button>
+<button id="go_balanced" class="submit_special submit_blue">Balanced</button>
+<button id="go_large" class="submit_special submit_green">Large</button>
+<button id="go_verylarge" class="submit_special submit_yellow">Very Large</button>
 
 <div id="precise">
 	{%  for user in pUsers %}
@@ -15,6 +15,11 @@
 		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
 	</div>
 	{% endfor %}
+	{% if pUsers is empty  %}
+	<div id="warning">
+		No One ! Maybe you should change your <a href="{{ path('member_preference') }}"><button class="submit_special submit_pink"> Preferences !</button> </a>
+	</div>
+	{% endif %}
 </div>
 
 <div class="clear"></div>
@@ -25,6 +30,11 @@
 		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
 	</div>
 	{% endfor %}
+	{% if sUsers is empty  %}
+	<div id="warning">
+		No One ! Maybe you should change your <a href="{{ path('member_preference') }}"><button class="submit_special submit_pink"> Preferences !</button> </a>
+	</div>
+	{% endif %}
 </div>
 
 <div class="clear"></div>
@@ -35,6 +45,11 @@
 		<a href="{{ path('member_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
 	</div>
 	{% endfor %}
+	{% if tUsers is empty  %}
+	<div id="warning">
+		No One ! Maybe you should change your <a href="{{ path('member_preference') }}"><button class="submit_special submit_pink"> Preferences !</button> </a>
+	</div>
+	{% endif %}
 </div>
 <div class="clear"></div>
 <h3></h3>

@@ -24,10 +24,10 @@ float:left;
 }
 
 .mini{
-	vertical-align:middle;
-	margin-right:4%;
-	height:38px;
-	width:38px;
+vertical-align:middle;
+margin-right:4%;
+height:38px;
+width:38px;
 }
 
 #title_page{
@@ -390,6 +390,14 @@ width:15em;
 height: 2em;
 text-align:center;
 cursor:pointer;
+}
+
+.submit_special{
+color:white;
+width:14em;
+height: 2em;
+text-align:center;
+cursor:pointer;
 margin-left:1em;
 }
 
@@ -399,6 +407,10 @@ margin-left:1em;
 .submit_blue:hover{background:#39c1f3;}
 .submit_purple{background:#7100ac;}
 .submit_purple:hover{background:#9701e5;}
+.submit_yellow{background:#bca629;}
+.submit_yellow:hover{background:#e1c62f;}
+.submit_pink{background:#C497C5;}
+.submit_pink:hover{background:#d5a0d7;}
 
 
 input[type=text],input[type=password],select{
@@ -439,6 +451,7 @@ display:none;
 	font-weight:900;
 	color:#FFDA73;
 	text-align:center;
+	cursor:pointer;
 }
 
 .checkbox_label:hover{
@@ -450,10 +463,11 @@ display:none;
 	font-weight:900;
 	color:#7db9e8;
 	text-align:center;
+	cursor:pointer;
 }
 
 .checkbox_label_checked:hover{
-	color:white;
+	color:grey;
 }
 
 /*STYLE CHAT ROOM*/
@@ -576,9 +590,9 @@ font-weight:800;
 }
 
 .user_case_female{
-width:15px;
+width:50px;
 margin:2%;
-padding:3%;
+padding:4%;
 float:left;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;

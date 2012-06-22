@@ -9,3 +9,7 @@ all_search:
 all_registration:
     pattern:   /registration
     defaults:  { _controller: BuntsuuMainBundle:All:registration }
+    
+all_profile_target:
+    pattern:   /profile/{target}
+    defaults: { _controller: BuntsuuMainBundle:All:profileTarget }

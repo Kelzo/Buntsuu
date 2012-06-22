@@ -5,24 +5,24 @@
 	<div class="general_content">
 		<h2 id="title_page"> Search </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/search.png') }}" alt="search"/>
 		<div class="clear"></div>
-		<form action="" class="side-by-side clearfix" method="post">
+		<form action="{{ path('all_search')}}" class="side-by-side clearfix" method="post">
 	       
 	       <label>Spoken</label>
-	       <select  class="chzn-select">
+	       <select name="spoken" class="chzn-select">
 	       	{% for language in languages %}
 	       		<option>{{ language.name }}</option>
 	       	{% endfor %}
 	       	</select>
 	
 	       	<label>Searched</label>
-	       	<select  class="chzn-select">
+	       	<select  name="searched" class="chzn-select">
 	       	{% for language in languages %}
 	       		<option>{{ language.name }}</option>
 	       	{% endfor %}
 	       </select>
 	
 	       <div  class="clear"></div>
-	        <button class="submit submit_purple" type="submit" >  Search !</button>
+	        <button class="submit submit_purple" type="submit" >Search !</button>
 	    </form>
     </div>
 </div>

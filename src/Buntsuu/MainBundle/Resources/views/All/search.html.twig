@@ -2,6 +2,21 @@
 
 {%block  principal_content %}
 
-<h2> Search </h2>
+<h2 id="title_page"> Search </h2><img id="mini" src="{{ asset('bundles/buntsuumain/images/search.png') }}" alt="search"/>
+<div class="clear"></div>
 
+<div id="precise">
+	{%  for user in users %}
+	<div class="user_case_{% if user.gender == 0  %}male{% else %}female{% endif %}">
+		<a href="{{ path('all_profile_target',{'target':user.username}) }}">{{ user.username | slice(0,4) }}{% if user.username | length  > 4 %}...{% endif %}</a>
+	</div>
+	{% endfor %}
+	{% if users is empty  %}
+	<div id="warning">
+		No One ! 
+	</div>
+	{% endif %}
+</div>
+<div class="clear"></div>
+<a href="{{ path('all_index') }}"><button class="submit_special submit_blue"> Back </button></a>
 {% endblock %}

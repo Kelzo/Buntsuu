@@ -116,4 +116,29 @@ class PreferenceRepository extends EntityRepository
 	
 		return $qb->getQuery()->getResult();
 	}
+	
+	public function simpleSearch($languageSearched,$languageSpoken)
+	{
+		$qb = $this->createQueryBuilder('p')
+		->join('p.user','u')
+		->join('p.firstLanguageSpoken','flp')
+		->join('p.secondLanguageSpoken','slp')
+		->join('p.thirdLanguageSpoken','tlp')
+		->join('p.firstLanguageSearched','fls')
+		->join('p.secondLanguageSearched','sls')
+		->join('p.thirdLanguageSearched','tls')
+		->select('u.username as username, u.gender as gender')
+		->where('
+				flp.name IN (:FirstLanguageSearched) OR
+				slp.name IN (:FirstLanguageSearched)OR
+				tlp.name IN (:FirstLanguageSearched)OR
+				fls.name IN (:FirstLanguageSpoken) OR
+				sls.name IN (:FirstLanguageSpoken) OR
+				tls.name IN (:FirstLanguageSpoken)
+				')
+				->setParameter('FirstLanguageSearched', $languageSearched)
+				->setParameter('FirstLanguageSpoken', $languageSpoken);
+	
+		return $qb->getQuery()->getResult();
+	}
 }

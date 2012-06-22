@@ -10,9 +10,9 @@
 {% else %}
 <img src="{{ asset('bundles/buntsuumain/images/1.png') }}" alt="skype"/>
 {% endif %} {{ user.username }}</div>
-<div class="email"><img src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/>  Email </div>
+<div class="email"><img src="{{ asset('bundles/buntsuumain/images/email.png') }}" alt="email"/> {{ user.email }}</div>
 <div class="letter"><img src="{{ asset('bundles/buntsuumain/images/letter.png') }}" alt="letter"/>  Adress </div>
-<div class="classic_bottom"><img src="{{ asset('bundles/buntsuumain/images/birthday.png') }}" alt="skype"/> Birthday {{ user.birthdate }}</div>
+<div class="classic_bottom"><img src="{{ asset('bundles/buntsuumain/images/birthday.png') }}" alt="skype"/> Birthday {{ user.birthdate | date ('m.d.y') }}</div>
 <div class="skype" ><img src="{{ asset('bundles/buntsuumain/images/skype.png') }}" alt="skype"/>  {{ user.skype }}</div>
 <div class="facebook"><img src="{{ asset('bundles/buntsuumain/images/facebook.png') }}" alt="facebook"/>  {{ user.facebook }}</div>
 </div>
@@ -40,7 +40,7 @@
 	</div>
 {% endif %}
 </div>
-<a href=""> <button class="submit submit_blue">Send a message</button> </a>
-<a href=""> <button class="submit submit_purple"> Add a comment </button> </a>
+<a href="{{ path('member_target_message',{'target':user.username}) }}"> <button class="submit submit_purple">Send a message</button> </a>
+<!-- <a href=""> <button class="submit submit_purple"> Add a comment </button> </a> -->
 <div class="clear"></div>
 {% endblock %}

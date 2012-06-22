@@ -18,6 +18,10 @@ member_profile_target:
     pattern:   /profile/{target}
     defaults:  { _controller: BuntsuuMainBundle:Member:profileTarget }
 
+member_target_message:
+    pattern:   /message/{target}
+    defaults:  { _controller: BuntsuuMainBundle:Member:messageTarget }
+
 member_preference:
     pattern:  /preference
     defaults: { _controller : BuntsuuMainBundle:Member:preference }
